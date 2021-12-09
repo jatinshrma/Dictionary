@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dictionary</title>
+</head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap');
+    body {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1900&q=80');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-attachment: fixed;
+    }
+
+    #alert {
+        margin-bottom: 0;
+        width: 600px;
+    }
+
+    #wordInput {
+        background-color: #ffffff7d;
+    }
+
+    .border-none {
+        border: 0px;
+        border-radius: 5px;
+        height: 46px;
+    }
+
+    #searchContainer {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin: 0px 0px;
+        justify-content: center;
+        align-items: center;
+        transform: translate(-50%, -50%);
+    }
+
+    #resultContainer {
+        display: none;
+        background-color: #ffffff80;
+        border-radius: 50px;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%, -10%);
+        animation: appear .3s;
+    }
+    .examples{
+        font-family: 'Raleway', sans-serif;
+    }
+    #audioImg{
+        height: 25px;
+        padding-bottom: 4px;
+    }
+    @keyframes appear {
+
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+</style>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">WOW Dictionary!!</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </nav>
+        <div id="alert"></div>
+    </header>
+
+    <main>
+        <div class="container-sm" id="searchContainer">
+            <form id="form" class="row gx-3 gy-2 align-items-center justify-content-center">
+                <div class="col-sm-3">
+                    <input type="text" class="form-control border-none" id="wordInput"
+                        placeholder="Type word to search">
+                </div>
+                <div class="col-auto">
+                    <button type="submit" class="btn btn-primary border-none">Submit</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="container" id="resultContainer">
+            <div class="container-sm mx-4 my-5" id="results">
+                <span class="my-1" id="word" style="font-size:23px;"></span> <span id="pronun"> </span>
+                <img id="audioImg" src="https://img.icons8.com/ios-filled/50/000000/room-sound.png"/>
+                <p id="origin"><i>Origin : </i></p>
+                    <ol>
+                        <i><p class="my-2" id="pos1" style="font-size:18px; margin: -23px"></p></i>
+                        <li class="my-2" id="def1"></li>
+                        <p id="ex1" class="examples"><strong>example : </strong></p>
+                        <i><p class="my-2" id="pos2" style="font-size:18px; margin: -23px"></p></i>
+                        <li class="my-2" id="def2"></li>
+                        <p id="ex2" class="examples"><strong>example : </strong></p>
+                        <i><p class="my-2" id="pos3" style="font-size:18px; margin: -23px"></p></i>
+                        <li class="my-2" id="def3"></li>
+                        <p id="ex3" class="examples"><strong>example : </strong></p>
+                    </ol>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+        crossorigin="anonymous"></script>
+    <!-- <script src="/JavaScript exercises/Exercise ( Dictionary )/Dictionary( XHR ).js"></script> -->
+    <script src="/Dictionary( Fetch ).js"></script>
+    <!-- <script src="/JavaScript exercises/Exercise ( Dictionary )/Dictionary (asyn-await).js"></script> -->
+</body>
+
+</html>
